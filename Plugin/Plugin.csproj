@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<Deterministic>True</Deterministic>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<EnableDynamicLoading>True</EnableDynamicLoading>
+	</PropertyGroup>
+
+  	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<OutputPath>..\_debug\plugin\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<DebugType>None</DebugType>
+		<OutputPath>..\_release\plugin\</OutputPath>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts\Contracts.csproj" Private="false" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+</Project>
